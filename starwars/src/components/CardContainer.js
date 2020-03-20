@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CharCard from "./CharCard"
-import { Container } from "reactstrap";
+import { Container, Row } from "reactstrap";
 
 export default function CardContainer() {
     const [data, setData] = useState([]);
@@ -18,14 +18,14 @@ export default function CardContainer() {
             })
     }, []);
     console.log(data);
-    return <div>
-        {
-            data.map((item, index) => {
-              return  <CharCard name = {item.name} height = {item.height} mass = {item.mass} 
-              hair_color = {item.hair_color} skin_color = {item.skin_color} key ={index} />
-            })
-        }
-        
-        
-    </div>;
+    return <Container>
+        <Row>
+            {
+                data.map((item, index) => {
+                    return <CharCard name={item.name} height={item.height} mass={item.mass}
+                        hair_color={item.hair_color} skin_color={item.skin_color} key={index} />
+                })
+            }
+        </Row>
+    </Container>;
 }

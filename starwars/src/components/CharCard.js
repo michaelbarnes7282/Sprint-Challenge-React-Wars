@@ -1,21 +1,27 @@
 import React from "react";
-import { Card, CardHeader, CardText, Col } from "reactstrap";
+import { Card, CardHeader, CardText, CardBody, Col } from "reactstrap";
+
+const cardStyle = {
+    margin: '20px'
+}
 
 const CharCard = props => {
 
-    if(!props) return <h3>Loading...</h3>
+    if (!props.name) return <h3>Loading...</h3>
 
     return (
-        <Col>
-        <Card>
-            <CardHeader>Name: {props.name}</CardHeader>
-            <CardText>Height: {props.height}</CardText>
-            <CardText>Mass: {props.mass}</CardText>
-            <CardText>Hair Color: {props.hair_color}</CardText>
-            <CardText>Skin Color: {props.skin_color}</CardText>
-        </Card>
+        <Col xl="6">
+            <Card style = {cardStyle}>
+                <CardHeader>Name: {props.name}</CardHeader>
+                <CardBody>
+                    <CardText>Height: {props.height}</CardText>
+                    <CardText>Mass: {props.mass}</CardText>
+                    <CardText>Hair Color: {props.hair_color}</CardText>
+                    <CardText>Skin Color: {props.skin_color}</CardText>
+                </CardBody>
+            </Card>
         </Col>
     );
-}
+};
 
 export default CharCard;
