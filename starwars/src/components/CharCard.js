@@ -7,8 +7,6 @@ const cardStyle = {
 
 const CharCard = props => {
 
-    if (!props.name) return <h3>Loading...</h3>
-
     return (
         <Col xl="6">
             <Card style = {cardStyle}>
